@@ -10,6 +10,10 @@ app.use(express.static("public"))
 const indexRouter = require("./routes/index"); 
 app.use("/", indexRouter); 
 
+
+const categoriaEquipe = require("./routes/equipe");
+app.use("/equipe", categoriaEquipe);
+
 // Iniciar o servidor e sincronizar com o banco de dados 
 app.listen(3000, () => {
 console.log("Servidor em execução na porta 3000"); 
