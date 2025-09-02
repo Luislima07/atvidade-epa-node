@@ -19,6 +19,9 @@ app.use("/se", categoriaSE);
 const categoriaEquipe = require("./routes/equipe");
 app.use("/equipe", categoriaEquipe);
 
+const categoriaUsuarios = require("./routes/usuarios");
+app.use("/usuarios", categoriaUsuarios);
+
 // Iniciar o servidor e sincronizar com o banco de dados 
 app.listen(3000, () => {
 console.log("Servidor em execução na porta 3000"); 
