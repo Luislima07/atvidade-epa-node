@@ -10,6 +10,11 @@ app.use(express.static("public"))
 const indexRouter = require("./routes/index"); 
 app.use("/", indexRouter); 
 
+const categoriaPW = require("./routes/pw");
+app.use("/pw", categoriaPW);
+
+const categoriaSE = require("./routes/se");
+app.use("/se", categoriaSE);
 
 const categoriaEquipe = require("./routes/equipe");
 app.use("/equipe", categoriaEquipe);
