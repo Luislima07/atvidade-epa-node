@@ -10,9 +10,17 @@ app.use(express.static("public"))
 const indexRouter = require("./routes/index"); 
 app.use("/", indexRouter); 
 
+const categoriaPW = require("./routes/pw");
+app.use("/pw", categoriaPW);
+
+const categoriaSE = require("./routes/se");
+app.use("/se", categoriaSE);
 
 const categoriaEquipe = require("./routes/equipe");
 app.use("/equipe", categoriaEquipe);
+
+const categoriaUsuarios = require("./routes/usuarios");
+app.use("/usuarios", categoriaUsuarios);
 
 // Iniciar o servidor e sincronizar com o banco de dados 
 app.listen(3000, () => {
