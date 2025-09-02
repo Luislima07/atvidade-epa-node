@@ -6,3 +6,4 @@ document.getElementById("btnMapa").onclick = function () {
         iframe.style.display = "none";
     }
 }
+
