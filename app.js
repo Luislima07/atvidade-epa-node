@@ -31,40 +31,11 @@ app.use("/alunos", categoriaAlunos);
 const categoriaCategorias = require("./routes/categorias");
 app.use("/categorias", categoriaCategorias);
 
-let mensagens = [
-  { de: "Bot", texto: "Olá! Como posso ajudar?" }
-];
-let api_key = "SUA_CHAVE_AQUI";
 
 // Rota principal
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-
-// Rotas de mensagens
-app.get("/mensagens", (req, res) => {
-  res.json(mensagens);
-});
-
-app.post("/enviar-mensagem", upload.none(), (req, res) => {
-  const texto = req.body.texto;
-  if (!texto) return res.status(400).json({ erro: "Mensagem vazia" });
-
-  mensagens.push({ de: "Usuário", texto });
-
-  // Simula resposta do bot
-  mensagens.push({ de: "Bot", texto: "Recebi: " + texto });
-
-  res.json({ sucesso: true });
-});
-
-
-// Rota de configuração da chave
-app.post("/configurar-chave", upload.none(), (req, res) => {
-  api_key = req.body.chave || api_key;
-  res.json({ mensagem: "Chave salva com sucesso!" });
-});
-
 
 
 
