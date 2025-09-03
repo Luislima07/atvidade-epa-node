@@ -30,7 +30,7 @@ app.use("/alunos", categoriaAlunos);
 
 const categoriaCategorias = require("./routes/categorias");
 app.use("/categorias", categoriaCategorias);
-
+/*
 let mensagens = [
   { de: "Bot", texto: "Olá! Como posso ajudar?" }
 ];
@@ -64,7 +64,7 @@ app.post("/configurar-chave", upload.none(), (req, res) => {
   api_key = req.body.chave || api_key;
   res.json({ mensagem: "Chave salva com sucesso!" });
 });
-
+*/
 
 
 
